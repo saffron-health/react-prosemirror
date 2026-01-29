@@ -44,7 +44,7 @@ function mergeStyleProps(a: HTMLProps<HTMLElement>, b: HTMLProps<HTMLElement>) {
 export function mergeReactProps(
   a: HTMLProps<HTMLElement>,
   b: HTMLProps<HTMLElement>
-) {
+): any {
   return {
     ...a,
     ...b,

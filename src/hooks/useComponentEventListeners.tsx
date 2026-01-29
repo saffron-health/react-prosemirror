@@ -33,7 +33,11 @@ import {
  * To accomplish this, we shallowly clone the registry whenever a new event
  * type is registered.
  */
-export function useComponentEventListeners() {
+export function useComponentEventListeners(): {
+  registerEventListener: (eventType: keyof DOMEventMap, handler: EventHandler) => void;
+  unregisterEventListener: (eventType: keyof DOMEventMap, handler: EventHandler) => void;
+  componentEventListenersPlugin: any;
+} {
   const [registry, setRegistry] = useState(
     new Map<keyof DOMEventMap, Array<EventHandler>>()
   );
